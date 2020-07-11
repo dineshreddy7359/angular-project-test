@@ -1,0 +1,38 @@
+.user-wrapper {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    opacity: 1.0;
+}
+.user-wrapper .user-form {
+    margin-top: 10px;
+    min-width: 100%;
+    max-width: 300px; 
+    width: 100%;
+}
+.user-wrapper .user-full-width,.user-wrapper .btn-block {
+    width: 100%;
+}
+.user-wrapper mat-card-header {
+    text-align: center;
+    width: 100%;
+    display: block;
+    margin-top: -50px;
+}
+.user-wrapper .mat-stroked-button {
+    border: 1px solid currentColor;
+    line-height: 40px;
+    background: #FFF7FA;
+}
+.user-button {
+    margin-top: 20px;
+}
+
+table, th, td{
+    border: 1px solid #666;
+}
+table th, table td{
+    padding: 10px;
+}

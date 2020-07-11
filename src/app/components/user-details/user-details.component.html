@@ -1,0 +1,56 @@
+<!-- <p>user-details works!</p> -->
+
+<form [formGroup]="userForm">
+    <div fxLayout="row wrap" fxLayoutWrap="wrap">
+        <div fxFlex.gt-sm="33" fxFlex.gt-xs="33" fxFlex="100">
+            <mat-form-field class="user-full-width">
+                <input matInput formControlName="userName" placeholder="User Name" required>
+                <mat-error *ngIf="!userForm.controls['userName'].valid && userForm.controls['userName'].touched">
+                <mat-error *ngIf="userForm.controls['userName'].errors.required">User Name should not be empty.</mat-error>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div fxFlex.gt-sm="33" fxFlex.gt-xs="33" fxFlex="100">
+            <mat-form-field class="user-full-width">
+              <input matInput formControlName="emailId" placeholder="Email Id" required>
+              <mat-error *ngIf="!userForm.controls['emailId'].valid && userForm.controls['emailId'].touched">
+                <mat-error *ngIf="userForm.controls['emailId'].errors.required">Email Id should not be empty.</mat-error>
+              </mat-error>
+            </mat-form-field>
+        </div>
+        <div fxFlex.gt-sm="33" fxFlex.gt-xs="33" fxFlex="100">
+            <mat-form-field class="user-full-width">
+              <input matInput type="password" formControlName="password" placeholder="Password" required>
+              <mat-error *ngIf="!userForm.controls['password'].valid && userForm.controls['password'].touched">
+                <mat-error *ngIf="userForm.controls['password'].errors.required">Password should not be empty.</mat-error>
+              </mat-error>
+            </mat-form-field>
+        </div>
+        <div fxFlex.gt-sm="33" fxFlex.gt-xs="33" fxFlex="100">
+            <mat-form-field class="user-full-width">
+              <input matInput formControlName="role" placeholder="Role" required>
+              <mat-error *ngIf="!userForm.controls['role'].valid && userForm.controls['role'].touched">
+                <mat-error *ngIf="userForm.controls['role'].errors.required">Role should not be empty.</mat-error>
+              </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="user-button">
+            <button mat-stroked-button color="primary" class="btn-block" (click)="user()" [disabled]="!userForm.valid">submit</button>
+        </div>
+    </div>
+</form>
+
+<table *ngIf="userList.length > 0">
+    <thead>
+        <th>User Name</th>
+        <th>Email Id</th>
+        <th>Password</th>
+        <th>Role</th>
+    </thead>
+    <tbody *ngFor="let element of userList">
+        <td>{{element.userName}}</td>
+        <td>{{element.emailId}}</td>
+        <td>{{element.password}}</td>
+        <td>{{element.role}}</td>
+    </tbody>
+</table>
